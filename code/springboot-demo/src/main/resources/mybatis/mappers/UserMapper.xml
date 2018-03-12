@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" 
+
+>
+<mapper namespace="com.springboot.demo.dao.UserMapper">
+	<!-- 以下两个<cache>标签二选一,第一个可以输出日志,第二个不输出日志 只要在对应的mapper配置文件中加入<cache />标签即可 -->
+	<!-- <cache type="org.mybatis.caches.ehcache.LoggingEhcache" /> -->
+	<!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"/> -->
+	<select id="getUsers" resultType="java.util.LinkedHashMap"
+		useCache="true">
+		SELECT ID "id",NAME "name" from TB_USER
+	</select>
+	<select id="getUsersByPage" resultType="java.util.LinkedHashMap"
+		useCache="true">
+		SELECT ID "id",NAME "name" from TB_USER
+	</select>
+	
+
+
+</mapper>
